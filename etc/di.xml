@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Sales\Api\InvoiceRepositoryInterface">
+        <plugin name="Odoo2MagentoAttributesInvoiceRepositoryPlugin"
+                type="Netzexpert\Odoo2MagentoAttributes\Plugin\Sales\Api\InvoiceRepositoryInterfacePlugin" />
+    </type>
+    <type name="Magento\Sales\Model\Order\InvoiceDocumentFactory">
+        <plugin name="Odoo2MagentoAttributesInvoiceDocumentFactoryPlugin"
+                type="Netzexpert\Odoo2MagentoAttributes\Plugin\Sales\Model\Order\InvoiceDocumentFactoryPlugin" />
+    </type>
+    <type name="Magento\Sales\Api\Data\InvoiceInterface">
+        <plugin name="Odoo2MagentoAttributesInvoiceInterfacePluginn"
+                type="Netzexpert\Odoo2MagentoAttributes\Plugin\Sales\Api\Data\InvoiceInterfacePlugin" />
+    </type>
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Invoice\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="odoo_customer_id" xsi:type="string">sales_invoice.odoo_customer_id</item>
+                <item name="odoo_invoice_nr" xsi:type="string">sales_invoice.odoo_invoice_nr</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

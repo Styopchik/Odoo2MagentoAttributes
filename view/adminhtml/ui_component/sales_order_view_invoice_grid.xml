@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="sales_order_invoice_columns">
+        <column name="increment_id" class="Netzexpert\Odoo2MagentoAttributes\Ui\Component\Listing\Column\IncrementId" />
+    </columns>
+</listing>
