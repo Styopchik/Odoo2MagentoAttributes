@@ -8,4 +8,7 @@
         <attribute code="odoo_customer_id" type="int"/>
         <attribute code="odoo_invoice_nr" type="string"/>
     </extension_attributes>
+    <extension_attributes for="Magento\Quote\Api\Data\CartItemInterface">
+        <attribute code="configurator_options" type="Netzexpert\ProductConfigurator\Api\Data\ConfiguratorItemOptionValueInterface[]" />
+    </extension_attributes>
 </config>
