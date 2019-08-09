@@ -39,11 +39,7 @@ class OrderItemManagement implements OrderItemManagementInterface
      */
     public function getOrderQuoteItems($orderId)
     {
-        try {
-            $order = $this->orderRepository->get($orderId);
-        } catch (NoSuchEntityException $exception) {
-            throw NoSuchEntityException::singleField('orderId', $orderId);
-        }
+        $order = $this->orderRepository->get($orderId);
         $itemIds = array_keys($order->getItems());
 
         $quoteItems = $this->quoteItemCollectionFactory->create();
