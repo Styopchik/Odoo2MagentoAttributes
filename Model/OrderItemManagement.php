@@ -40,7 +40,10 @@ class OrderItemManagement implements OrderItemManagementInterface
     public function getOrderQuoteItems($orderId)
     {
         $order = $this->orderRepository->get($orderId);
-        $itemIds = array_keys($order->getItems());
+        $itemIds = [];
+        foreach ($order->getItems() as $item) {
+            $itemIds[] = $item->getQuoteItemId();
+        }
 
         $quoteItems = $this->quoteItemCollectionFactory->create();
         $quoteItems->addFieldToFilter('item_id', ['in' => implode(',', $itemIds)]);
